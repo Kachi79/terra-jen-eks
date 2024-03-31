@@ -21,7 +21,7 @@ pipeline {
                 script {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name kaira-eks-cluster"
-                        sh "kubectl apply -f deployment.yml"
+                        sh "kubectl destroy -f deployment.yml"
                         sh "kubectl apply -f service.yml"
                     }
                 }
