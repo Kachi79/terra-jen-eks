@@ -2,7 +2,7 @@ module "eks" {
   source = "terraform-aws-modules/eks/aws"
 
   cluster_name    = "kaira-eks-cluster"
-  cluster_version = "1.28"
+  cluster_version = "1.24"
 
   cluster_endpoint_public_access = true
 
