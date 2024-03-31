@@ -11,7 +11,7 @@ pipeline {
                 script {
                     dir('eks') {
                         sh "terraform init"
-                        sh "terraform apply -auto-approve"
+                        sh "terraform destroy -auto-approve"
                     }
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name kaira-eks-cluster"
-                        sh "kubectl destroy -f deployment.yml"
+                        sh "kubectl apply -f deployment.yml"
                         sh "kubectl apply -f service.yml"
                     }
                 }
