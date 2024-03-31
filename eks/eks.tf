@@ -3,7 +3,7 @@ module "eks" {
 
 
   cluster_name    = "kaira-eks-cluster"
-  cluster_version = "1.28"
+  cluster_version = "1.25"
 
   cluster_endpoint_public_access = true
 
