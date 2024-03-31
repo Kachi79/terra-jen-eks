@@ -20,28 +20,6 @@ module "eks" {
     }
   }
 
-   # Cluster access entry
-  # To add the current caller identity as an administrator
-  enable_cluster_creator_admin_permissions = true
-
-  access_entries = {
-    # One access entry with a policy associated
-    example = {
-      kubernetes_groups = []
-      principal_arn     = "arn:aws:iam::123456789012:role/something" 
-
-      policy_associations = {
-        example = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy"
-          access_scope = {
-            namespaces = ["default"]
-            type       = "namespace"
-          }
-        }
-      }
-    }
-  }
-
   tags = {
     Environment = "dev"
     Terraform   = "true"
