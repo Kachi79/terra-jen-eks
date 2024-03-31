@@ -13,14 +13,14 @@ module "vpc" {
   single_nat_gateway   = true
 
   tags = {
-    "kubernetes.io/cluster/koko-eks-cluster" = "shared"
+    "kubernetes.io/cluster/kaira-eks-cluster" = "shared"
   }
   public_subnet_tags = {
-    "kubernetes.io/cluster/koko-eks-cluster" = "shared"
+    "kubernetes.io/cluster/kaira-eks-cluster" = "shared"
     "kubernetes.io/role/elb"               = 1
   }
   private_subnet_tags = {
-    "kubernetes.io/cluster/koko-eks-role" = "shared"
+    "kubernetes.io/cluster/kaira-eks-role" = "shared"
     "kubernetes.io/role/internal-elb"   = 1
   }
 }
